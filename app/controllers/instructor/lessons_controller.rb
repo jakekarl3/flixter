@@ -20,8 +20,8 @@ class Instructor::LessonsController < ApplicationController
   end
 
   helper_method :current_section
-  def current_session
-    @current_session ||= Section.find(params[:section_id])
+  def current_section
+    @current_section ||= Section.find(params[:section_id])
   end
 
   def lesson_params
