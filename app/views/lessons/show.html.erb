@@ -6,10 +6,17 @@
     <%= current_lesson.subtitle %>
   </p>
 
+  <% if current_lesson.previous_lesson.present? %>
+    <% link_to lesson_path(current_lesson.previous_lesson), class: 'btn btn-default float-left' do %>
+      Previous Lesson &nbsp;
+      <span class="fa fa-backward"></span>
+    <% end %>
+  <% end %>
+  
   <% if current_lesson.next_lesson.present? %>
     <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default float-right' do %>
-    Next Lesson &nbsp;
-    <span class="fa fa-forward"></span>
+      Next Lesson &nbsp;
+      <span class="fa fa-forward"></span>
     <% end %>
   <% end %>
 
